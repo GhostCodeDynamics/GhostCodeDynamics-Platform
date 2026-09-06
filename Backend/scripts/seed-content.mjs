@@ -15,8 +15,8 @@
  * Usage:
  *   MONGO_URI="mongodb://..." node scripts/seed-content.mjs
  */
-import mongoose from "mongoose";
 import dotenv from "dotenv";
+import { connectDB, disconnectDB } from "../src/config/db.js";
 
 dotenv.config();
 
@@ -349,7 +349,7 @@ async function main() {
   }
 
   try {
-    await mongoose.connect(uri, { serverSelectionTimeoutMS: 15000 });
+    await connectDB();
   } catch (err) {
     console.error(`[seed-content] failed to connect to MongoDB: ${err && err.message}`);
     process.exit(1);
@@ -361,7 +361,7 @@ async function main() {
     `[seed-content] done: ${counts.posts} posts, ${counts.projects} projects (idempotent upserts).`
   );
 
-  await mongoose.disconnect();
+  await disconnectDB();
 }
 
 main().catch((err) => {

@@ -1,0 +1,26 @@
+{
+  "name": "GhostCode Dynamics",
+  "short_name": "GhostCode",
+  "description": "Founder-led digital solutions, mentorship, and cybersecurity learning.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a12",
+  "theme_color": "#0a0a12",
+  "categories": ["business", "education", "productivity"],
+  "icons": [
+    {
+      "src": "/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

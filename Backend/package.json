@@ -1,0 +1,40 @@
+{
+  "name": "ghostcode-dynamics-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GhostCode Dynamics API backend",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "create-admin": "node scripts/create-admin.mjs",
+    "seed": "node scripts/seed-content.mjs",
+    "test": "node --test tests/*.test.js",
+    "test:auth": "node --test tests/admin-auth.test.js",
+    "test:email": "node --test tests/email.test.js",
+    "test:uploads": "node --test tests/admin-uploads.test.js",
+    "test:api": "node --test tests/api.test.js",
+    "test:content": "node --test tests/admin-content.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^9.9.1",
+    "multer": "^2.2.0",
+    "nodemailer": "^9.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

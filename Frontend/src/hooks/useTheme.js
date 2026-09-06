@@ -1,0 +1,11 @@
+import { createContext, useContext } from "react";
+
+export const STORAGE_KEY = "ghostcode-theme";
+
+export const ThemeContext = createContext(undefined);
+
+export function useTheme() {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
+  return ctx;
+}

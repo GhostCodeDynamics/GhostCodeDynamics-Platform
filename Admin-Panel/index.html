@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0a0a12" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <title>GhostCode Dynamics — Admin</title>
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
+  <!-- Pre-paint theme bootstrap (namespaced key; mirrors the customer site pattern).
+       Stored preference -> system preference -> dark. -->
+  <script>
+    (function () {
+      try {
+        var stored = null;
+        try {
+          stored = localStorage.getItem("ghostcode-admin-theme");
+        } catch (e) {}
+        var isDark;
+        if (stored === "dark" || stored === "light") {
+          isDark = stored === "dark";
+        } else if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches
+        ) {
+          isDark = false;
+        } else {
+          isDark = true;
+        }
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="min-h-dvh bg-background text-foreground antialiased">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

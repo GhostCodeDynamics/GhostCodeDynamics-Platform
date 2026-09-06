@@ -1,0 +1,15 @@
+# GhostCode Dynamics — ghostcodedynamics.github.io
+#
+# Public static site. Crawlers may index the full public site.
+# Future/placeholder module pages are intentionally not indexed:
+# they are noindexed at page level and excluded from the sitemap.
+
+User-agent: *
+Allow: /
+Disallow: /careers
+Disallow: /community
+Disallow: /internships
+Disallow: /labs
+Disallow: /verify
+
+Sitemap: https://ghostcodedynamics.github.io/sitemap.xml
